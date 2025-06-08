@@ -4,66 +4,84 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Memories</title>
+    <link rel="stylesheet" href="style.css"> <!-- Link ke file CSS eksternal jika ada -->
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9; /* Warna latar belakang */
+        }
+
+        header {
+            background-color: #4a90e2; /* Warna header */
+            padding: 20px;
+            text-align: center;
+            color: white; /* Warna teks header */
+        }
+
+        nav a {
+            margin: 0 10px;
+            text-decoration: none;
+            color: white; /* Warna link */
+            font-weight: bold; /* Menebalkan teks link */
+        }
+
+        .hero {
+            background-color: #ddd; /* Warna latar belakang hero */
+            text-align: center;
+            padding: 50px 0;
+        }
+
+        .hero img {
+            max-width: 100%;
+            height: auto;
+            margin-bottom: 20px;
+            border-radius: 8px; /* Sudut membulat untuk gambar */
+        }
+
+        .featured {
+            padding: 20px;
+        }
+
+        .memory-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Responsive grid */
+            grid-gap: 20px;
+        }
+
+        .memory {
+            border: 1px solid #ccc;
+            padding: 10px;
+            border-radius: 8px; /* Sudut membulat */
+            overflow: hidden; /* Menghindari gambar keluar dari batas */
+            transition: transform 0.3s ease; /* Transisi untuk animasi */
+        }
+
+        .memory img {
+            width: 100%; /* Memastikan gambar memenuhi lebar */
+            height: 200px; /* Tinggi tetap untuk semua gambar */
+            object-fit: cover; /* Memastikan gambar terpotong dengan baik */
+            margin-bottom: 10px;
+            transition: transform 0.3s ease; /* Transisi untuk gambar */
+        }
+
+        .memory:hover {
+            transform: scale(1.05); /* Membesarkan saat hover */
+        }
+
+        .memory:hover img {
+            transform: scale(1.1); /* Membesarkan gambar saat hover */
+        }
+
+        footer {
+            background-color: #4a90e2; /* Warna footer */
+            padding: 10px;
+            text-align: center;
+            color: white; /* Warna teks footer */
+        }
+    </style>
 </head>
-<style>
-    body {
-    font-family: sans-serif;
-    margin: 0;
-    padding: 0;
-}
-
-header {
-    background-color: #f0f0f0;
-    padding: 20px;
-    text-align: center;
-}
-
-nav a {
-    margin: 0 10px;
-    text-decoration: none;
-    color: #333;
-}
-
-.hero {
-    background-color: #ddd; /* Example background color */
-    text-align: center;
-    padding: 50px 0;
-    margin: 0;
-}
-
-.hero img {
-    max-width: 100%;
-    height: auto;
-    margin-bottom: 0px;
-}
-
-.featured {
-    padding: 20px;
-}
-
-.memory-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Responsive grid */
-    grid-gap: 20px;
-}
-
-.memory {
-    border: 1px solid #ccc;
-    padding: 10px;
-}
-
-.memory img {
-    max-width: 100%;
-    height: auto;
-    margin-bottom: 10px;
-}
-
-footer {
-    background-color: #f0f0f0;
-    padding: 10px;
-    text-align: center;
-}
-</style>
 <body>
     <header>
         <h1>My Memories</h1>
@@ -74,7 +92,7 @@ footer {
 
     <main>
         <section class="hero">
-            <img src="foto.jgp.jpeg" alt="Hero Image">  <!-- Replace with your image -->
+            <img src="foto.jpg" alt="Hero Image">  <!-- Ganti dengan gambar Anda -->
             <h2>Welcome to My Memories</h2>
             <p>A place to cherish and revisit life's precious moments.</p>
         </section>
